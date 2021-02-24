@@ -4,4 +4,12 @@ class Recipe < ApplicationRecord
 
     validates :name, presence: true
     validates :name, uniqueness: true
+
+    #display recently created recipes
+
+    #display highly rated recipes
+
+    #display recipes in alphabetical order?
+
+    #display recipes by cook_time (least to greatest)
 end
