@@ -2,7 +2,7 @@
 
 <p>Cook Time: <%= @recipe.cook_time %> min.</p>
 <p>Servings: <%= @recipe.servings %></p>
-<p>Ingredients:</p>
+Ingredients:
     <% @recipe.list_of_ingredients.each do |ingredient| %>
         <li><%= ingredient %></li>
     <% end %>
