@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
 
     validates :name, :cook_time, :servings, :ingredients, :directions, presence: true
     validates :name, uniqueness: true
+    validates :cook_time, :servings, numericality: { only_integer: true }
 
     #display ingredients in a list
     def list_of_ingredients
