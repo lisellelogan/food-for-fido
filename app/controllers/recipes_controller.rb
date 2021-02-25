@@ -18,15 +18,17 @@ class RecipesController < ApplicationController
     end
 
     def show
-        @recipe = Recipe.find_by(id: params[:id])
+        find_recipe
     end
 
     def edit 
-        @recipe = Recipe.find_by(id: params[:id])
+        find_recipe
     end
 
     def update 
-
+        find_recipe
+        find_recipe.update(recipe_params)
+        redirect_to recipe_path(@recipe)
     end
 
     def destroy
@@ -43,6 +45,10 @@ class RecipesController < ApplicationController
             :ingredients,
             :directions
         )
+    end
+
+    def find_recipe
+        @recipe = Recipe.find_by(id: params[:id])
     end
 
 end
