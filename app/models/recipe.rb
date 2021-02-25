@@ -13,8 +13,10 @@ class Recipe < ApplicationRecord
     #display recently created recipes
 
     #display highly rated recipes
+        #self.comments.order(:rating)
 
     #display recipes in alphabetical order?
+        #self.order
 
     #display recipes by cook_time (least to greatest)
 end
