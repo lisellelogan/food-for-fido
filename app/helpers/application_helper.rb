@@ -9,9 +9,10 @@ module ApplicationHelper
     end
 
     def redirect_if_not_authorized
-        if !logged_in?
-            redirect_to login_path
-        end
+        # if !logged_in?
+        #     redirect_to login_path
+        # end
+        redirect_to login_path unless logged_in?
     end
     
 
