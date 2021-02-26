@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <%= link_to("Home", root_path) %>
+    <%= link_to("Sign Up", signup_path) %>
+    <%= link_to("Log In", login_path) %>
     <%= link_to("All Recipes", recipes_path) %>
     <%= yield %>
   </body>
