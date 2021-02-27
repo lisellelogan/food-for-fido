@@ -12,10 +12,12 @@ class CommentsController < ApplicationController
 
     def create 
         if logged_in?
-            @recipe = Recipe.find_by_id(params[:recipe_id])
-            @comment = Comment.new(comment_params)
-            @comment.recipe = @recipe
-            @comment.user = current_user
+            # @recipe = Recipe.find_by_id(params[:recipe_id])
+            # @comment = Comment.new(comment_params)
+            # @comment.recipe = @recipe
+            # @comment.user = current_user
+            @comment = current_user.comments.build(comment_params)
+            @comment.recipe = params[:recipe_id]
             if @comment.save 
                 redirect_to comment_path(@comment)
             else  
