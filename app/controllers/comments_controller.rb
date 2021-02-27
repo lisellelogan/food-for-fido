@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     
     def new
         #is this a nested route?
-        if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:brand_id])
+        if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
             @comment = @recipe.comments.build 
         else  
             @comment = Comment.new
@@ -12,7 +12,9 @@ class CommentsController < ApplicationController
 
     def create 
         if logged_in?
+            @recipe = Recipe.find_by_id(params[:recipe_id])
             @comment = Comment.new(comment_params)
+            @comment.user = current_user
             if @comment.save 
                 redirect_to comment_path(@comment)
             else  
