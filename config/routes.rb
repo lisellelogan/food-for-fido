@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root to: 'static#home'
-  resources :users, only: [:new, :create, :show]
-  resources :recipes
-  resources :comments
+  resources :users, only: [:show]
+  
+  resources :recipes do 
+    resources :comments, only: [:index, :new, :create]
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
