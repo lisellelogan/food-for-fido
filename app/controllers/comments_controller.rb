@@ -24,7 +24,14 @@ class CommentsController < ApplicationController
     end
 
     def index
-        @comments = Comment.all
+        #is this a nested route?
+        if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
+            #if it is nested, we only want comments of that recipe
+            @comments = @recipe.comments
+        else  
+            #show all the comments
+            @comments = Comment.all
+        end
     end
 
     private 
