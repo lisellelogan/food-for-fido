@@ -17,6 +17,10 @@ class CommentsController < ApplicationController
         @comment = Comment.find_by(id: params[:id])
     end
 
+    def index
+        @comments = Comment.all
+    end
+
     private 
 
     def comment_params

@@ -1,0 +1,10 @@
+<h1>All Comments</h1>
+
+<ul>
+    <% @comments.each do |comment| %>
+        <%= comment.rating %>
+        <%= comment.content %>
+    <% end %>
+</ul>
+
+Add link to user show page
