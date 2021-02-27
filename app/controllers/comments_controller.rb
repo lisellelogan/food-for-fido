@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
             @recipe = Recipe.find_by_id(params[:recipe_id])
             @comment.recipe = @recipe
             @comment.user = current_user
-            binding.pry
             if @comment.save 
                 redirect_to comment_path(@comment)
             else  
@@ -49,8 +48,7 @@ class CommentsController < ApplicationController
             :rating,
             :content,
             :user_id,
-            :recipe_id,
-            recipe_attributes: [:name, :cook_time, :servings, :ingredients, :directions]
+            :recipe_id
         )
     end
 
