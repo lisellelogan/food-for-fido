@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'static#home'
   resources :users, only: [:show]
+  resources :comments
   
   resources :recipes do 
     resources :comments, only: [:index, :new, :create]
