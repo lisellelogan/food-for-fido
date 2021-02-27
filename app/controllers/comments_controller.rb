@@ -50,7 +50,8 @@ class CommentsController < ApplicationController
             :rating,
             :content,
             :user_id,
-            :recipe_id
+            :recipe_id,
+            recipe_attributes: [:name, :cook_time, :servings, :ingredients, :directions]
         )
     end
 
