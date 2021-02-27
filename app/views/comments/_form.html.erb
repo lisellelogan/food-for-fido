@@ -1,4 +1,7 @@
 <%= form_for @comment do |f| %>
+
+    <%= render 'layouts/form_errors', form: @comment %>
+
     <%= f.label :rating %>
     <%= f.number_field :rating %>
     <br><br>
@@ -6,4 +9,5 @@
     <%= f.text_area :content %>
     <br><br>
     <%= f.submit "Create Comment" %>
+
 <% end %>
