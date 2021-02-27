@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
         if logged_in?
             @recipe = Recipe.find_by_id(params[:recipe_id])
             @comment = Comment.new(comment_params)
+            @comment.recipe = @recipe
             @comment.user = current_user
             if @comment.save 
                 redirect_to comment_path(@comment)
@@ -45,7 +46,9 @@ class CommentsController < ApplicationController
     def comment_params
         params.require(:comment).permit(
             :rating,
-            :content
+            :content,
+            :user_id,
+            :recipe_id
         )
     end
 
