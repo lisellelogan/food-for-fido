@@ -20,7 +20,7 @@ boodday_cake = Recipe.create({name: "Boofday Cake", cook_time: 160, servings: 8,
 veggie_pawty_bowl = Recipe.create({name: "Veggie Pawty Bowl", cook_time: 30, servings: 5, ingredients: "carrots, celery, pumkin, broccoli, beef, brown rice", directions: "Steam all veggies until soft. Cook rice in rice cooker while veggies are cooking. Then in a pan, cook beef. Combine all ingredients and mix. Wait until cool and serve!"})
 
 #comment data
-beemo.comments.create(rating: 3, content: "Good but kind of bland.", recipe_id: chimken_rice)
-seymour.comments.create(rating: 4, content: "I love a pawsta dish!", recipe_id: spawghetti)
-oscar.comments.create(rating: 5, content: "So good! I had this for my dog's birthday and he loved it!", recipe_id: boodday_cake)
-charlie.comments.create(rating: 1, content: "Veggies were not my dog's thing.", recipe_id: veggie_pawty_bowl)
+beemo_comment = beemo.comments.create(rating: 3, content: "Good but kind of bland.", recipe_id: chimken_rice)
+seymour_comment = seymour.comments.create(rating: 4, content: "I love a pawsta dish!", recipe_id: spawghetti)
+oscar_comment = oscar.comments.create(rating: 5, content: "So good! I had this for my dog's birthday and he loved it!", recipe_id: boodday_cake)
+charlie_comment = charlie.comments.create(rating: 1, content: "Veggies were not my dog's thing.", recipe_id: veggie_pawty_bowl)
