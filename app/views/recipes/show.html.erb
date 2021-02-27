@@ -11,3 +11,4 @@ Ingredients:
 
 <%= link_to("Edit Recipe", edit_recipe_path(@recipe)) %>
 <%= link_to("Delete Recipe", recipe_path(@recipe), method: 'delete') %>
+<%= link_to("Comment on this Recipe", new_recipe_comment_path(@recipe)) %>
