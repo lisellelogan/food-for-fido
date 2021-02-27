@@ -11,11 +11,15 @@ class CommentsController < ApplicationController
     end
 
     def create 
-        @comment = Comment.new(comment_params)
-        if @comment.save 
-            redirect_to comment_path(@comment)
+        if logged_in?
+            @comment = Comment.new(comment_params)
+            if @comment.save 
+                redirect_to comment_path(@comment)
+            else  
+                render :new #so that we can see our errors
+            end
         else  
-            render :new #so that we can see our errors
+            redirect_to login_path
         end
     end
 
