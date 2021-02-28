@@ -4,6 +4,8 @@
         Rating: <%= comment.rating %>
         <br>
         Comment: <%= comment.content %>
+        <br>
+        <%= display_time(comment.created_at) %>
     <p>
 
     <%= link_to("Edit", edit_comment_path(comment.recipe, comment)) if logged_in? && current_user == comment.user %>
