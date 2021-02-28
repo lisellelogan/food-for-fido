@@ -8,11 +8,11 @@ module ApplicationHelper
         !!current_user
     end
 
-    def verify_user
+    def redirect_if_not_logged_in
         redirect_to login_path unless logged_in?
     end
 
-    def authorized_admin
+    def redirect_if_not_admin
         if !logged_in? && !current_user.admin
             redirect_to login_path
         end

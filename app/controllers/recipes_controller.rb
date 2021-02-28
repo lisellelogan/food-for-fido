@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
 
     def edit 
         find_recipe
+        
     end
 
     def update 
