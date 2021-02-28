@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root to: 'static#home'
-  resources :comments
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -13,5 +12,11 @@ Rails.application.routes.draw do
   resources :recipes do 
     resources :comments, only: [:index, :new, :create]
   end
+
+  scope '/admin' do 
+    resources :recipes, except: [:show, :index] 
+  end
+
+  resources :comments, only: [:show, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
