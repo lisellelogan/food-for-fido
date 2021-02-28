@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+    before_action :redirect_if_not_admin
 
     def new
         @recipe = Recipe.new
@@ -23,7 +24,6 @@ class RecipesController < ApplicationController
 
     def edit 
         find_recipe
-        
     end
 
     def update 
