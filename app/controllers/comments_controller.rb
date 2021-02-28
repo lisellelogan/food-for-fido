@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     include CommentsHelper
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update, :destroy]
 
     def new
         if verify_if_recipe_exists
@@ -11,18 +12,14 @@ class CommentsController < ApplicationController
     end
 
     def create 
-        if logged_in?
-            @comment = Comment.new(comment_params)
-            @recipe = Recipe.find_by_id(params[:recipe_id])
-            @comment.recipe = @recipe
-            @comment.user = current_user
-            if @comment.save 
-                redirect_to recipe_path(@comment.recipe)
-            else  
-                render :new
-            end
+        @comment = Comment.new(comment_params)
+        @recipe = Recipe.find_by_id(params[:recipe_id])
+        @comment.recipe = @recipe
+        @comment.user = current_user
+        if @comment.save 
+            redirect_to recipe_path(@comment.recipe)
         else  
-            redirect_to login_path
+            render :new
         end
     end
 
