@@ -1,0 +1,8 @@
+<ul>
+    <%= link_to("#{comment.recipe.name}", recipe_path(comment.recipe)) %>
+    <br>
+    Rating: <%= comment.rating %>
+    Comment: <%= comment.content %>
+    <br>
+    By: <%= link_to("#{comment.user.name}", user_path(comment.user)) %>
+</ul>
