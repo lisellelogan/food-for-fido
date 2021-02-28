@@ -26,5 +26,10 @@ module ApplicationHelper
     def display_time(date) 
         date.strftime('%m/%d/%y at %H:%M%P')
     end
+
+    def find_recipe
+        @recipe = Recipe.find_by(id: params[:id])
+    end
+
     
 end

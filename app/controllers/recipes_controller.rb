@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-    include RecipesHelper
     before_action :redirect_if_not_logged_in
     before_action :redirect_if_not_admin, only: [:new, :create, :edit, :update, :destroy]
 
