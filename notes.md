@@ -3,12 +3,16 @@ Models:
     name:string
     email:string
     password_digest:string
+    UID:string
+    provider:string
+
 - Recipe
     name:string
     cook_time:integer
     servings:integer
     ingredients:text
     direction:text
+
 - Comment
     rating:integer
     content:text
