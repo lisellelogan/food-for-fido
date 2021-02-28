@@ -6,6 +6,18 @@ class SessionsController < ApplicationController
         end
     end
 
+    def omniauth 
+        user = User.create_from_omniauth(auth)
+
+        if user.valid?
+            session[:user_id] = user.id
+            redirect_to root_path
+        else 
+            flash[:message] = user.errors.full_messages.join("")
+            redirect_to root_path
+        end
+    end
+
     def create 
         user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
@@ -21,20 +33,6 @@ class SessionsController < ApplicationController
         session.delete(:user_id)
         redirect_to root_path
     end
-
-    def omniauth 
-        user = User.create_from_omniauth(auth)
-
-        if user.valid?
-            session[:user_id] = user.id
-            redirect_to root_path
-        else 
-            flash[:message] = user.errors.full_messages.join("")
-            redirect_to root_path
-        end
-
-    end
-
     private 
 
     def auth 

@@ -10,4 +10,8 @@ module CommentsHelper
     def find_comment
         @comment = Comment.find_by(id: params[:id])
     end
+
+    def verify_if_recipe_exists
+        params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
+    end
 end

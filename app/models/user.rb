@@ -11,7 +11,7 @@ class User < ApplicationRecord
         User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
             u.name = auth['info']['name']
             u.email = auth['info']['email']
-            u.password = SecureRandom.hex(16) #assigns random generated password to go around password presence validation
+            u.password = SecureRandom.hex(16)
         end
     end
     
