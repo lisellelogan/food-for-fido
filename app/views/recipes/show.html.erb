@@ -2,11 +2,13 @@
 
 <p>Cook Time: <%= @recipe.cook_time %> min.</p>
 <p>Servings: <%= @recipe.servings %></p>
+
 Ingredients:
-    <% @recipe.list_of_ingredients.each do |ingredient| %>
+    <% list_of_ingredients(@recipe).each do |ingredient| %>
         <li><%= ingredient %></li>
     <% end %>
 <br>
+
 <p>Directions: <%= @recipe.directions %></p>
 
 <% if admin? == true %>
