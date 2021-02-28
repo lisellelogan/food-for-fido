@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
     before_action :redirect_if_not_logged_in
-    before_action :redirect_if_not_admin, except: [:show]
+    before_action :redirect_if_not_admin, only: [:new, :create, :edit, :update, :destroy]
 
     def new
         @recipe = Recipe.new
