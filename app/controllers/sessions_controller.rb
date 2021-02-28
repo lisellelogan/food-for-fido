@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(user)
         else  
             flash[:message] = "Invalid credentials. Please sign up or try again."
-            render :new
+            redirect_to login_path
         end
     end
 
