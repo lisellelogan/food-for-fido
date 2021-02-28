@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
 
+  get '/recipes_sorted_by_alphabetical_order', to: 'recipes#recipes_alphabetical_order'
+  get 'recipes_sorted_by_fastest_cook_time', to: 'recipes#recipes_fastest_cook_time'
+  get 'recipes_sorted_by_recently_created', to: 'recipes#recipes_recently_created'
+
   resources :recipes do 
     resources :comments, only: [:index, :new, :create]
   end
