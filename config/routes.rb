@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/auth/:provider/callback', to: 'sessions#omniauth'
+  match '/auth/facebook/callback', to: 'sessions#omniauth', via: [:get, :post]
 
   resources :recipes do 
     resources :comments, only: [:index, :new, :create]
