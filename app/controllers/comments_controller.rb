@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     include CommentsHelper
-    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update, :destroy]
+    before_action :redirect_if_not_logged_in, except: [:index]
 
     def new
         if verify_if_recipe_exists
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
 
     def destroy 
         find_comment
-        @comment.destroy
+        find_comment.destroy
         redirect_to recipe_path(@comment.recipe)
     end
 
