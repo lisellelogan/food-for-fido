@@ -17,6 +17,7 @@
       <% if !logged_in? %>
         <%= link_to("Sign Up", signup_path) %>
         <%= link_to("Log In", login_path) %>
+        <%= button_to("Log In With Facebook", '/auth/facebook') %>
       <% else %>
         <%= link_to("All Recipes", recipes_path) %>
         <% if admin? == true %>
