@@ -1,7 +1,9 @@
 <h1>All Fido Approved Recipes</h1>
 
+display filter links here
+
 <ul>
-    <% @recipes.display_by_recently_created_recipes.each do |recipe| %>
+    <% @recipes.each do |recipe| %>
         <li><%= link_to(recipe.name, recipe_path(recipe)) %></li>
     <% end %>
 </ul>
