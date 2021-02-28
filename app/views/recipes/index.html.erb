@@ -1,6 +1,8 @@
 <h1>All Fido Approved Recipes</h1>
 
 <%= link_to("Recipes in Alphabetic Order", recipes_ordered_by_alphabetical_order_path) %>
+<%= link_to("Quickest Cook Time", recipes_ordered_by_fastest_cook_time_path) %>
+<%= link_to("Recenly Created Recipes", recipes_ordered_by_recently_created_path) %>
 
 
 <%= render partial: 'recipe', collection: @recipes %>
