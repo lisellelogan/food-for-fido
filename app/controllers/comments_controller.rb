@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
             @comment.recipe = @recipe
             @comment.user = current_user
             if @comment.save 
-                redirect_to comment_path(@comment)
+                redirect_to recipe_path(@comment.recipe)
             else  
                 render :new #so that we can see our errors
             end
