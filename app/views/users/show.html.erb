@@ -4,10 +4,7 @@ Name: <%= @user.name %>
 <br>
 Email: <%= @user.email %>
 
-<% if logged_in? %>
-    <h3>Your Recent Comments: </h3>
-<% else %>
-    <h3><%= "#{@user.name}'s Recent Comments" %></h3>
-<% end %>
+
+<h3>Recent Comments: </h3>
 
 <%= render 'comments/user_comments', comments: @user.comments %>
