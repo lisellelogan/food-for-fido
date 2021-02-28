@@ -9,6 +9,7 @@ User.destroy_all
 Recipe.destroy_all
 Comment.destroy_all
 
+admin = User.create({name: "Fido Admin", email: "admin@fido.com", email_confirmation: "admin@fido.com", password: "admin", admin: true})
 beemo = User.create({name: "Beemo", email: "beemo@beemo.com", email_confirmation: "beemo@beemo.com", password: "beemo"})
 seymour = User.create({name: "Seymour", email: "seymour@seymour.com", email_confirmation: "seymour@seymour.com", password: "seymour"})
 oscar = User.create({name: "Oscar", email: "oscar@oscar.com", email_confirmation: "oscar@oscar.com", password: "oscar"})
