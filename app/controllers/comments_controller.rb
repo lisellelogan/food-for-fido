@@ -43,7 +43,8 @@ class CommentsController < ApplicationController
 
     def destroy 
         find_comment
-        @comment.delete
+        @comment.destroy
+        redirect_to recipe_path(@comment.recipe)
     end
 
     private 
