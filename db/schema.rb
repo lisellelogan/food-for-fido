@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_033759) do
+ActiveRecord::Schema.define(version: 2021_02_28_151111) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "rating"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_033759) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
+    t.string "uid"
+    t.string "provider"
   end
 
 end
