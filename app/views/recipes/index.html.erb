@@ -2,8 +2,4 @@
 
 display filter links here
 
-<ul>
-    <% @recipes.each do |recipe| %>
-        <li><%= link_to(recipe.name, recipe_path(recipe)) %></li>
-    <% end %>
-</ul>
+<%= render partial: 'recipe', collection: @recipes %>
