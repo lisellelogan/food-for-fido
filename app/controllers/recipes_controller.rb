@@ -23,6 +23,14 @@ class RecipesController < ApplicationController
         @recipes = Recipe.ordered_alphabetical_order
     end
 
+    def recipes_fastest_cook_time
+        @recipes = Recipe.ordered_fastest_cook_time
+    end
+
+    def recipes_recently_created
+        @recipes = Recipe.ordered_by_recently_created
+    end
+
     def show
         find_recipe
     end
