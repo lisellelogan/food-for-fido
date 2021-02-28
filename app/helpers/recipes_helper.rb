@@ -21,4 +21,8 @@ module RecipesHelper
         end
     end
 
+    def find_recipe
+        @recipe = Recipe.find_by(id: params[:id])
+    end
+
 end

@@ -6,4 +6,8 @@ module CommentsHelper
             tag.h1("All Comments")
         end
     end
+
+    def find_comment
+        @comment = Comment.find_by(id: params[:id])
+    end
 end

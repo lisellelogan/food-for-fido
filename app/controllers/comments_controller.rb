@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-    
+    include CommentsHelper
+
     def new
-        #is this a nested route?
         if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
             @comment = @recipe.comments.build 
         else  
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
             if @comment.save 
                 redirect_to recipe_path(@comment.recipe)
             else  
-                render :new #so that we can see our errors
+                render :new
             end
         else  
             redirect_to login_path
@@ -27,22 +27,19 @@ class CommentsController < ApplicationController
     end
 
     def index
-        #is this a nested route?
         if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
-            #if it is nested, we only want comments of that recipe
             @comments = @recipe.comments
         else  
-            #show all the comments
             @comments = Comment.all
         end
     end
 
     def edit 
-        @comment = Comment.find_by(id: params[:id])
+        find_comment
     end
 
     def update 
-        comment = Comment.find_by(id: params[:id])
+        find_comment
         comment.update(comment_params)
         redirect_to recipe_path(comment.recipe)
     end
