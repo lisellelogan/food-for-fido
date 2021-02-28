@@ -37,8 +37,13 @@ class CommentsController < ApplicationController
 
     def update 
         find_comment
-        comment.update(comment_params)
+        @comment.update(comment_params)
         redirect_to recipe_path(comment.recipe)
+    end
+
+    def destroy 
+        find_comment
+        @comment.delete
     end
 
     private 
