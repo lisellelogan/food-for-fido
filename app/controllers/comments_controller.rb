@@ -26,10 +26,6 @@ class CommentsController < ApplicationController
         end
     end
 
-    def show 
-        @comment = Comment.find_by(id: params[:id])
-    end
-
     def index
         #is this a nested route?
         if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
