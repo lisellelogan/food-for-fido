@@ -15,4 +15,7 @@ class Recipe < ApplicationRecord
         #self.order
 
     #display recipes by cook_time (least to greatest)
+
+    
+
 end
