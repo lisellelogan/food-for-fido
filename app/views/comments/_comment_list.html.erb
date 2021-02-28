@@ -5,4 +5,6 @@
         <br>
         Comment: <%= comment.content %>
     <p>
+
+    <%= link_to("Edit", edit_comment_path(comment.recipe, comment)) if logged_in? && current_user == comment.user %>
 <% end %>
