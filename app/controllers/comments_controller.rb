@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     include CommentsHelper
 
     def new
-        if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
+        if verify_if_recipe_exists
             @comment = @recipe.comments.build 
         else  
             @comment = Comment.new
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     end
 
     def index
-        if params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
+        if verify_if_recipe_exists
             @comments = @recipe.comments
         else  
             @comments = Comment.all
@@ -53,6 +53,10 @@ class CommentsController < ApplicationController
             :user_id,
             :recipe_id
         )
+    end
+
+    def verify_if_recipe_exists
+        params[:recipe_id] && @recipe = Recipe.find_by_id(params[:recipe_id])
     end
 
 end
