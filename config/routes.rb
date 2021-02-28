@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/auth/facebook/callback', to: 'sessions#omniauth'
+
   resources :recipes do 
     resources :comments, only: [:index, :new, :create]
   end
