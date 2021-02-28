@@ -19,6 +19,10 @@ class RecipesController < ApplicationController
         @recipes = Recipe.all
     end
 
+    def recipes_alphabetical_order
+        @recipes = Recipe.ordered_alphabetical_order
+    end
+
     def show
         find_recipe
     end
