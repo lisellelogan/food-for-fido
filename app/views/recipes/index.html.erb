@@ -1,7 +1,7 @@
-<h1>All Recipes (Index)</h1>
+<h1>All Fido Approved Recipes</h1>
 
 <ul>
-    <% @recipes.each do |recipe| %>
+    <% @recipes.display_by_fastest_cook_time.each do |recipe| %>
         <li><%= link_to(recipe.name, recipe_path(recipe)) %></li>
     <% end %>
 </ul>
