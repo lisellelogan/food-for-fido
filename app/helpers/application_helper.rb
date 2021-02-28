@@ -24,7 +24,7 @@ module ApplicationHelper
     end
 
     def display_time(date) 
-        date.strftime(%m/%d/&y at %H:%M%P)
+        date.strftime('%m/%d/&y at %H:%M%P')
     end
     
 end

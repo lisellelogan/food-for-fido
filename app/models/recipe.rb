@@ -17,8 +17,8 @@ class Recipe < ApplicationRecord
         self.order(:cook_time)
     end
 
-    def self.display_by_recently_created_recipe
-        self.order(:created_at)
+    def self.display_by_recently_created_recipes
+        self.order(created_at: :desc)
     end
     
 
