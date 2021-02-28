@@ -37,9 +37,4 @@ class SessionsController < ApplicationController
         request.env['omniauth.auth']
     end
 
-    def set_session_and_redirect_to_user(user)
-        session[:user_id] = user.id
-        redirect_to user_path(user)
-    end
-
 end

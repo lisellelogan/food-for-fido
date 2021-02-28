@@ -16,6 +16,11 @@ module ApplicationHelper
         redirect_to login_path unless logged_in?
     end
 
+    def set_session_and_redirect_to_user(user)
+        session[:user_id] = user.id
+        redirect_to user_path(user)
+    end
+
     def redirect_if_not_admin
         if admin? == false
             flash[:message] = "User restriction. If you are an admin, please log in."
