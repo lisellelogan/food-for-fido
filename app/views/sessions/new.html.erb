@@ -1,8 +1,6 @@
 <h1>Login</h1>
 
 <%= form_with(url: '/login', local: true) do |f|%>
-   <%= render 'flash_message' %>
-    <br>
     <%= f.label :email %>
     <%= f.email_field :email %>
     <br>

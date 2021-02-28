@@ -6,11 +6,6 @@ class Recipe < ApplicationRecord
     validates :name, uniqueness: true
     validates :cook_time, :servings, numericality: { only_integer: true }
 
-    #display ingredients in a list
-    def list_of_ingredients
-        self.ingredients.split(",")
-    end
-
     #display recently created recipes
 
     #display highly rated recipes
