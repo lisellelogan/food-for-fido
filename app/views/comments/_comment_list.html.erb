@@ -1,7 +1,8 @@
 <% comments.each do |comment| %>
-    <h3><%= link_to comment.user.name, user_path(comment.user) %><h3>
-    <h5>
+    <h3><%= link_to comment.user.name, user_path(comment.user) %></h3>
+    <p>
         Rating: <%= comment.rating %>
+        <br>
         Comment: <%= comment.content %>
-    </h5>
+    <p>
 <% end %>
