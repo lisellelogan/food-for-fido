@@ -9,7 +9,7 @@ Ingredients:
 <br>
 <p>Directions: <%= @recipe.directions %></p>
 
-<% if current_user.admin == true %>
+<% if admin? == true %>
     <%= link_to("Edit Recipe", edit_recipe_path(@recipe)) %>
     <%= link_to("Delete Recipe", recipe_path(@recipe), method: 'delete') %>
 <% else %>
