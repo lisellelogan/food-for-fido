@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-    before_action :redirect_if_not_admin
+    before_action :redirect_if_not_admin, except: [:show]
 
     def new
         @recipe = Recipe.new
