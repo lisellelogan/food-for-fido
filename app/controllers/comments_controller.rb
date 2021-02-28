@@ -42,7 +42,9 @@ class CommentsController < ApplicationController
     end
 
     def update 
-
+        comment = Comment.find_by(id: params[:id])
+        comment.update(comment_params)
+        redirect_to recipe_path(comment.recipe)
     end
 
     private 
