@@ -17,7 +17,7 @@ module ApplicationHelper
     end
 
     def redirect_if_not_admin
-        if !admin?
+        if admin? == false
             flash[:message] = "User restriction. If you are an admin, please log in."
             redirect_to login_path
         end
