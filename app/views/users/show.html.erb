@@ -10,4 +10,4 @@ Email: <%= @user.email %>
     <h3><%= "#{@user.name}'s Recent Comments" %></h3>
 <% end %>
 
-<%= render 'comments/comment_list', comments: @user.comments %>
+<%= render 'comments/user_comments', comments: @user.comments %>

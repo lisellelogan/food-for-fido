@@ -1,0 +1,8 @@
+<% comments.each do |comment| %>
+    <h3><%= link_to comment.recipe.name, recipe_path(comment.recipe) %></h3>
+    <p>
+        Rating: <%= comment.rating %>
+        <br>
+        Comment: <%= comment.content %>
+    <p>
+<% end %>
