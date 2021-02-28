@@ -1,5 +1,6 @@
 <h1>All Fido Approved Recipes</h1>
 
-display filter links here
+<%= link_to("Recipes in Alphabetic Order", recipes_ordered_by_alphabetical_order_path) %>
+
 
 <%= render partial: 'recipe', collection: @recipes %>
