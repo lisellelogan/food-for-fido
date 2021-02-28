@@ -22,5 +22,9 @@ module ApplicationHelper
             redirect_to login_path
         end
     end
+
+    def display_time(date) 
+        date.strftime(%m/%d/&y at %H:%M%P)
+    end
     
 end
