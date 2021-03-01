@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     include CommentsHelper
-    before_action :redirect_if_not_logged_in, except: [:index]
+    before_action :redirect_if_not_logged_in
 
     def new
         if verify_if_recipe_exists
