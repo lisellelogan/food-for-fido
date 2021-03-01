@@ -14,21 +14,42 @@
  *= require_self
  */
 
+ 
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
 html {
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+   overflow: auto;
 }
 
 body {
    background-color: #EDF7F6;
    margin: 0;
    padding: 0;
+   font-family: 'Akaya Telivigala', cursive;
+}
+
+a {
+   &:link,
+   &:active,
+   &:visited {
+      text-decoration: none;
+   }
 }
 
 .home {
    display: flex;
    justify-content: center;
+   margin: 5rem 0 0 0;
+   font-size: 4rem;
+}
+
+.fidoHomeImage {
+   margin-left: 50%;
+   margin-top: -5rem;
+   transform: translateX(-50%);
 }
 
 
@@ -43,7 +64,7 @@ body {
    justify-content: space-around;
    padding: 1.5rem 0;
    background-color: #2660A4;
-   
+   font-size: 1.6rem;
    text-decoration: none;
 
    a {
@@ -52,25 +73,18 @@ body {
       text-decoration: none;
 
       &:hover {
-         transform: translateY(-3px);
+         transform: translateY(-4px);
          text-shadow: 0 3px 6px #3780d4;
          
       }
 
       &:active {
-         transform: translateY(3px);
+         transform: translateY(4px);
       }
    }
 }
 
-a {
 
-   &:link,
-   &:active,
-   &:visited {
-      text-decoration: none;
-   }
-}
    
 
 
