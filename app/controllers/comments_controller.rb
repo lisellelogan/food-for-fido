@@ -37,8 +37,11 @@ class CommentsController < ApplicationController
 
     def update 
         find_comment
-        @comment.update(comment_params)
-        redirect_to recipe_path(@comment.recipe)
+        if @comment.update(comment_params)
+            redirect_to recipe_path(@comment.recipe)
+        else  
+            render :edit
+        end
     end
 
     def destroy 
