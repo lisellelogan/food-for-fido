@@ -8,7 +8,7 @@ Food For Fido was created using the web application framework Ruby, implemented 
 
 ## Visuals
 
-The [icon](https://www.deviantart.com/guichicookie/art/Journal-icon-341340032) for the web application.
+The [icon](https://www.istockphoto.com/vector/cute-jack-russell-terrier-paws-up-over-wall-dog-face-cartoon-vector-illustration-gm1158317995-316369293) for the web application. The web application was styled using [SASS/SCSS](https://sass-lang.com/documentation).
 
 ## Installation
 
