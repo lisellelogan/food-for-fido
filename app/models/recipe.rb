@@ -6,13 +6,10 @@ class Recipe < ApplicationRecord
     validates :name, uniqueness: true
     validates :cook_time, :servings, numericality: { only_integer: true }
 
-    #display recently created recipes
-
     def self.ordered_alphabetical_order
         self.order(:name)
     end
 
-    #display recipes by cook_time (least to greatest)
     def self.ordered_fastest_cook_time
         self.order(:cook_time)
     end
