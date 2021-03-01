@@ -1,10 +1,12 @@
-<h1>Account Details</h1>
+<div class="accountDetails">
+    <h1>Account Details</h1>
 
-Name: <%= @user.name %>
-<br>
-Email: <%= @user.email %>
+    Name: <%= @user.name %>
+    <br>
+    Email: <%= @user.email %>
 
 
-<h3>Recent Comments: </h3>
+    <h3>Recent Comments: </h3>
 
-<%= render 'comments/user_comments', comments: @user.comments %>
+    <%= render 'comments/user_comments', comments: @user.comments %>
+</div>

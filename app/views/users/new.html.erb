@@ -1,17 +1,19 @@
-<h1>Sign Up</h1>
+<div class="signUp">
+    <h1>Sign Up</h1>
 
-<%= form_for(@user, url: signup_path) do |f| %>
+    <%= form_for(@user, url: signup_path) do |f| %>
 
-    <%= render 'layouts/form_errors', form: @user %>
-    
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br><br>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <br><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br><br>
-    <%= f.submit "Sign Up" %>
-<% end %>
+        <%= render 'layouts/form_errors', form: @user %>
+        
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br><br>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+        <br><br>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <br><br>
+        <%= f.submit "Sign Up" %>
+    <% end %>
+</div>
