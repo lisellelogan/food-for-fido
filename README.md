@@ -22,7 +22,7 @@ To install this web application go to your terminal:
 
 To use the web application run `rails s` to start your local server.
 
-You should see something like this if shotgun was successful:
+You should see something like this if it was successful:
 ```bash
 => Booting Puma
 => Rails 6.1.3 application starting in development 
