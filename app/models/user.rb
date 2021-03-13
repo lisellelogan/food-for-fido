@@ -14,5 +14,9 @@ class User < ApplicationRecord
             u.password = SecureRandom.hex(16)
         end
     end
+
+    def self.alphabetize
+        self.order(:name)
+    end
     
 end

@@ -12,6 +12,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def alphabetize
+        @users = User.alphabetize
+    end
+
     def show
         @user = User.find_by(id: params[:id])
     end
